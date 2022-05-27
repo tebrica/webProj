@@ -1,0 +1,20 @@
+﻿@using WebApplication2.Models
+<h1>LOGIN</h1>
+<h2>@ViewBag.message</h2>
+@if (Session["user"] != null)
+{
+    User user = (User)Session["user"];
+    <h2>UR LOGGED IN AS @user.name</h2>
+}
+<form method="post" action="~/Home/Login">
+    <input id="username" name="username" />
+    <label for="username">username</label>
+    <br />
+    <input id="password" name="password" type="password" />
+    <label for="password">password</label>
+    <br />
+    <input type="submit" value="login" />
+</form>
+<form method="get" action="~/Home/GetTable">
+    <input type="submit" value="SHOW USERS"/>
+</form>

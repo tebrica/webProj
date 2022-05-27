@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+@using WebApplication2.Models
+@model Dictionary<string, User>
+<h2>Login</h2>
+<style>
+    table{
+        width: 50%;
+        align-content:center;
+    }
+    th,td{
+        vertical-align:central;
+        width:50%;
+        border-bottom: solid, 1px;
+        border-bottom-color: darkred;
+    }
+</style>
+<table>
+    <tr>
+        <th>username</th>
+        <th>password</th>
+    </tr>
+    @foreach (var user in Model.Values)
+    {
+    <tr>
+        <td>@user.name</td>
+        <td>@user.password</td>
+    </tr>
+    }
+</table>
